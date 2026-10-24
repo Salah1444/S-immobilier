@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('address');
             $table->foreignIdFor(City::class)->constrained()->nullOnDelete();
             $table->text('description')->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->string('facebook_url')->nullable();
             $table->string('instagram_url')->nullable();
             $table->timestamps();

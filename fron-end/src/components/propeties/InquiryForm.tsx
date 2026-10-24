@@ -115,13 +115,11 @@ export default function InquiryForm({
     "aria-invalid": errors[key] ? true : undefined,
     "aria-describedby": errors[key] ? `inquiry-${key}-error` : undefined,
   });
-
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     const found = validate(values);
     setErrors(found);
     if (Object.keys(found).length > 0) return;
-
     setStatus("loading");
     setFormError(null);
 
